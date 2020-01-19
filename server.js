@@ -19,8 +19,6 @@ app.use('/Student', studentRoutes);
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
-// campusAPI.getAllCampuses().then(data => console.log(data));
-studentAPI.getStudentById('Brooklyn College',1).then(student => console.log(student));
 
 
 // *
