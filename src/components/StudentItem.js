@@ -12,7 +12,7 @@ const styles = {
   }
 };
 
-export default class CampusItem extends PureComponent {
+export default class StudentItem extends PureComponent {
   render() {
     return (
       <li style={styles.li}>
@@ -20,6 +20,7 @@ export default class CampusItem extends PureComponent {
           studentName={this.props.studentName}
           campusName={this.props.campusName}
           image={this.props.image}
+          address={this.props.address}
         />
       </li>
     );

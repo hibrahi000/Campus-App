@@ -17,7 +17,7 @@ const styles = {
   }
 };
 
-const CampusDetail = ({ studentName, campusName, image }) => (
+const StudentDetail = ({ studentName, campusName, image }) => (
   <div style={styles.wrapper}>
     <span>{image}</span>
     <span style={styles.name}>{studentName}</span>
@@ -25,4 +25,4 @@ const CampusDetail = ({ studentName, campusName, image }) => (
   </div>
 );
 
-export default CampusDetail;
+export default StudentDetail;
