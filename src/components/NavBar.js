@@ -10,8 +10,8 @@ class NavBar extends React.Component {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto"></Nav>
           <Nav>
-            <Nav.Link href="#campuses">Campuses</Nav.Link>
-            <Nav.Link href="#students">Students</Nav.Link>
+            <Nav.Link href="/campusDetail">Campuses</Nav.Link>
+            <Nav.Link href="/students">Students</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

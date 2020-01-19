@@ -32,7 +32,7 @@ const styles = {
   }
 };
 
-const CampusDetail = ({ name, description, image, address }) => (
+const CampusDetail = ({ name, description, image, address, id }) => (
   <div style={styles.wrapper}>
     <div style={styles.imageContainer}>
       <span>

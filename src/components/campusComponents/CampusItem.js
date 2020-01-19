@@ -19,15 +19,21 @@ const styles = {
 export default class CampusItem extends PureComponent {
   render() {
     return (
-      <li style={styles.li}>
-        <div style={styles.leftWall('#333A40')} />
-        <CampusBody
-          name={this.props.name}
-          description={this.props.description}
-          image={this.props.image}
-          address={this.props.address}
-        />
-      </li>
+      <div>
+        <li
+          style={styles.li}
+          onClick={() => this.props.handleOnCampusClick(this.props.id)}
+        >
+          <div style={styles.leftWall('#333A40')} />
+
+          <CampusBody
+            name={this.props.name}
+            description={this.props.description}
+            image={this.props.image}
+            address={this.props.address}
+          />
+        </li>
+      </div>
     );
   }
 }

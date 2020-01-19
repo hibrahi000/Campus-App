@@ -1,6 +1,9 @@
 import React from 'react';
 import StudentItem from './components/StudentItem';
 import CampusItem from './components/campusComponents/CampusItem';
+import NavBar from './components/NavBar';
+import _ from 'lodash';
+import { Redirect } from 'react-router-dom';
 
 class CampusPage extends React.Component {
   constructor(props) {
@@ -16,13 +19,13 @@ class CampusPage extends React.Component {
         {
           id: 2,
           studentName: 'Mary',
-          campusName: 'Brookyln',
+          campusName: 'Lehman',
           image: 'Image goes here'
         },
         {
           id: 3,
           studentName: 'Jack',
-          campusName: 'Baruch',
+          campusName: 'Lehman',
           image: 'Image goes here'
         }
       ],
@@ -40,31 +43,48 @@ class CampusPage extends React.Component {
     };
   }
 
+  handleOnCampusClick = () => {
+    this.props.history.push('/editCampus');
+  };
+
   render() {
     const { students, campus } = this.state;
 
     return (
       <div>
+        <NavBar />
         <div>
           {campus.map(campus => (
             <CampusItem
+              key={campus.id}
+              id={campus.id}
               name={campus.name}
               description={campus.description}
               image={campus.image}
               address={campus.address}
+              handleOnCampusClick={this.handleOnCampusClick}
             />
           ))}
         </div>
-        <div>
-          <h1>Students:</h1>
-          {students.map(students => (
-            <StudentItem
-              studentName={students.studentName}
-              campusName={students.campusName}
-              image={students.image}
-            />
-          ))}
-        </div>
+        {students.length > 0 ? (
+          <div>
+            <h1>Students:</h1>
+            {students.map(students => (
+              <StudentItem
+                key={students.id}
+                id={students.id}
+                studentName={students.studentName}
+                campusName={students.campusName}
+                image={students.image}
+              />
+            ))}
+          </div>
+        ) : (
+          <div>
+            <h2>no students curently registered in this campus</h2>
+            <button>add students</button>
+          </div>
+        )}
       </div>
     );
   }
