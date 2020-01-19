@@ -18,7 +18,9 @@ this.testDB();
 
 
 exports.getAllCampuses = async() => {
-	return await campus.findAll().then(data => data);
+	return await campus.findAll().then(data => {
+		console.log(data);
+		return data});
 }
 exports.getCampusById = async (query) => {
 	console.log(query);
