@@ -2,6 +2,15 @@ import React from 'react'
 import axios from 'axios'
 
 const requestPost = () => {
+
+    axios.post("")
+    .then(response =>{
+          console.log(response.data.data);
+    })
+    .catch(error =>{
+        console.log(error);
+    })
+
     return (
         <div>
             

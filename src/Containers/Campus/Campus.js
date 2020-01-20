@@ -2,9 +2,8 @@ import React, { Component } from "react";
 
 import Aux from "../../hoc/Aux";
 // import classes from './Campus.module.css'
-import Navigation from "../../Components/Navigation/Navigation";
-import Hero from "../../Components/Navigation/Hero/Hero";
-import Contents from "../../Components/Navigation/Contents/Contents";
+import Nav from "../../Components/Navigation/Nav/Nav";
+import HomePage from "../../Components/Navigation/HomePage/HomePage";
 import Footer from "../../Components/Navigation/Footer/Footer";
 
 
@@ -12,9 +11,9 @@ class Campus extends Component {
   render() {
     return (
       <Aux>
-        <Navigation />
-        <Hero />
-        <Contents />
+        <Nav />
+        {/* //Navigation needs to change  */}
+        <HomePage/>
         <Footer />
       </Aux>
     );
