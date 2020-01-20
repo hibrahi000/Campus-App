@@ -35,7 +35,7 @@ class App extends Component {
 					<h1 className="App-title">Welcome to React</h1>
 					// Render the newly fetched data inside of this.state.data
 		<p>{this.state.data}</p>
-					{/* <CollegeListObj /> */}
+					
 				</header>
 			</div>
 		);

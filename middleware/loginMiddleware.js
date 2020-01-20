@@ -7,8 +7,9 @@ exports.login_load = (req, res, next) => {
 	next();
 };
 exports.test_load = (req, res, next) => {
-	getStudentById(1).then((data) => console.log(data));
+	// getStudentById(1).then((data) => console.log(data));
 	// getAllCampuses().then(data => {
 	// 	res.send({express : data});
 	// })
+	res.send({express: 'This is the dummy data'});
 };
