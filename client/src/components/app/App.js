@@ -19,14 +19,14 @@ class App extends Component {
 	render() {
 		let CollegeListObj = (
 			<div>
-				{this.state.data.forEach((campus) => (
+				{/* {this.state.data.forEach((campus) => (
 					<div>
 						<h1>Campus Name : {campus.dataValues.university}</h1>
 						<p>Location: {campus.dataValues.location}</p>
 						<p>Number Of Students : {campus.dataValues.number_of_students}</p>
 						<p>Campus Id : {campus.dataValues.id};</p>
 					</div>
-				))}
+				))} */}
 			</div>
 		);
 		return (
@@ -34,7 +34,8 @@ class App extends Component {
 				<header className="App-header">
 					<h1 className="App-title">Welcome to React</h1>
 					// Render the newly fetched data inside of this.state.data
-					<CollegeListObj />
+		<p>{this.state.data}</p>
+					{/* <CollegeListObj /> */}
 				</header>
 			</div>
 		);

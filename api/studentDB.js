@@ -2,7 +2,7 @@ const db = require('../config/database');
 const op = require('sequelize');
 const student = require('../models/student');
 const campus = require('../models/campus');
-
+const campusApi = require('../api/campusDB');
 exports.dbConnectionAuth = () => {
 	db
 		.authenticate()
@@ -16,8 +16,8 @@ exports.dbConnectionAuth = () => {
 		});
 };
 
-exports.getAllStudents = async (query) => {
-	return await student.findAll().then((students) => student).catch((err) => {
+exports.getAllStudents = async () => {
+	return await student.findAll().then((students) => students).catch((err) => {
 		console.log('Error finding students', err);
 	});
 };
@@ -86,4 +86,56 @@ exports.getStudentCampusID = async (query) => {
 		.findAll({ where: { campus_id: query } })
 		.then((data) => data)
 		.catch((err) => console.log('error in query'));
+};
+
+exports.addStudent = async (firstName, lastName, gender, email, dob, campusId) => {
+	const studentObj = {
+		first_name: firstName,
+		last_name: lastName,
+		gender: gender,
+		email: email,
+		date_of_birth: dob,
+		campus_id: campusId
+	};
+	student
+		.create(studentObj)
+		.then((newStudent) => {
+			console.log(
+				`Successfully Created new student`,
+				`Student ID: ${newStudent.id} <----> Campus ID: ${newStudent.campus_id}`
+			);
+			campusApi
+				.addStudent(newStudent.campus_id)
+				.then((campusObj) =>
+					console.log(
+						`Campus has been update it now has a value of Number Of Students = ${campusObj.number_of_students} `
+					)
+				);
+		})
+		.catch((err) => console.log('Err Campus could not be made', err));
+};
+
+exports.popStudent = async (studentId) => {
+	studentId = `${studentId}`;
+	this.getAllStudents()
+		.then((studentList) => {
+			let studentIndex = studentList.findIndex((studentObj) => {
+				console.log(`
+					${studentObj.dataValues.id}
+					${studentId}
+					${typeof studentObj.dataValues.id === typeof(studentId)}
+					`);
+				return studentObj.dataValues.id === studentId;
+			});
+			console.log(studentList[0]);
+			let campusID = studentList[studentIndex].dataValues.campus_id;
+			studentList.splice(studentIndex, 1);
+			console.log(studentList[0]);
+			console.log(campusID);
+			campusApi
+				.popStudent(campusID)
+				.then( async () => await studentList.save())
+				.catch((err) => console.log('Error student and campus was not updated', err));
+		})
+		.catch((err) => console.log('couldnt pop student'));
 };

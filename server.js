@@ -9,8 +9,6 @@ const campusRoutes = require('./routes/campusRoutes');
 const studentRoutes = require('./routes/studentsRoutes');
 const bodyParser = require('body-parser');
 
-
-
 const campusAPI = require('./api/campusDB');
 const studentAPI = require('./api/studentDB');
 
@@ -21,6 +19,12 @@ app.use('/Student', studentRoutes);
 
 // ____Body-Parser for express 4
 app.use(bodyParser.urlencoded({ extended: false }));
+
+campusAPI.getAllCampuses().then((campuses) => console.log(campuses[0].dataValues.number_of_students)).then(() => {
+	studentAPI.popStudent(1).then(() => {
+		campusAPI.getAllCampuses().then((campuses) => console.log(campuses[0].dataValues.number_of_students));
+	});
+});
 
 // *
 // !

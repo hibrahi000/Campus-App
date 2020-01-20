@@ -1,7 +1,5 @@
-const {getAllCampuses} = require('../api/campusDB');
-
-
-
+const { getAllCampuses } = require('../api/campusDB');
+const { getStudentById } = require('../api/studentDB');
 
 exports.login_load = (req, res, next) => {
 	console.log('Loading Login Page');
@@ -9,7 +7,8 @@ exports.login_load = (req, res, next) => {
 	next();
 };
 exports.test_load = (req, res, next) => {
-	getAllCampuses().then(data => {
-		res.send({express : data});
-	})
+	getStudentById(1).then((data) => console.log(data));
+	// getAllCampuses().then(data => {
+	// 	res.send({express : data});
+	// })
 };
