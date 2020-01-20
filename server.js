@@ -19,9 +19,12 @@ app.use('/Student', studentRoutes);
 
 // ____Body-Parser for express 4
 app.use(bodyParser.urlencoded({ extended: false }));
-
+// studentAPI.popStudent();
+// campusAPI.addCampus('TestUniversity','TestLocation').then(campusAPI.getAllCampuses().then(data => console.log(data)));
 // campusAPI.getAllCampuses().then(data => console.log(data));
-campusAPI.getCampusById(1).then(data => console.log(data.dataValues));
+// campusAPI.removeCampus(1);
+studentAPI.getStudentById(1).then(data => console.log(data));
+
 
 // *
 // !

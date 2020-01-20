@@ -81,10 +81,10 @@ exports.getStudentByDOB = async (query) => {
 		.catch((err) => console.log('error in query'));
 };
 
-exports.getStudentCampusID = async (query) => {
+exports.getStudentsByCampusID = async (query) => {
 	return await campus
-		.findAll({ where: { campus_id: query } })
-		.then((data) => data)
+		.findAll({ where: { campus_id: 1 } })
+		.then((data) => console.log(data))
 		.catch((err) => console.log('error in query'));
 };
 
@@ -123,7 +123,7 @@ exports.popStudent = async (studentId) => {
 				console.log(`
 					${studentObj.dataValues.id}
 					${studentId}
-					${typeof studentObj.dataValues.id === typeof(studentId)}
+					${typeof studentObj.dataValues.id === typeof studentId}
 					`);
 				return studentObj.dataValues.id === studentId;
 			});
@@ -134,7 +134,7 @@ exports.popStudent = async (studentId) => {
 			console.log(campusID);
 			campusApi
 				.popStudent(campusID)
-				.then( async () => await studentList.save())
+				.then(() => studentIndex[0].destroy())
 				.catch((err) => console.log('Error student and campus was not updated', err));
 		})
 		.catch((err) => console.log('couldnt pop student'));
