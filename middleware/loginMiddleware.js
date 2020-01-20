@@ -11,5 +11,5 @@ exports.test_load = (req, res, next) => {
 	// getAllCampuses().then(data => {
 	// 	res.send({express : data});
 	// })
-	res.send({express: 'This is the dummy data'});
+	res.send({ express: 'EL TOTO' });
 };

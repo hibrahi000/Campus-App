@@ -25,7 +25,7 @@ exports.getAllCampuses = async () => {
 exports.getCampusById = async (query) => {
 	console.log(query);
 	return await campus
-		.findAll({ where: { id: query } })
+		.findOne({ where: { id: query } })
 		.then((data) => data)
 		.catch((err) => console.log('error in query'));
 };
