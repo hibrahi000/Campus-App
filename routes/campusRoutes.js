@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const { login_load } = require('../middleware/loginMiddleware');
+const { campusPage_load } = require('../middleware/campusMiddleware');
 
-router.get('/', login_load);
+router.get('/', campusPage_load);
 
 
 module.exports = router;

@@ -61,25 +61,29 @@ exports.addCampus = async (universityName, locationName) => {
 };
 
 exports.removeCampus = async (campusId) => {
-	campus.findOne({where : {id : campusId}}).then(campusObj => {
-		studentAPI.getStudentsByCampusID(campusId).then(studentList => {
-			console.log(studentList, 'This is the student list');
-			// console.log(studentObj);
-			// studentList.forEach(studentObj =>{
-				
-			// 	// studentObj.destroy();
-			// });
-			// campusObj.destroy();
-		})
-	})
-}
-
+	campus.findOne({ where: { id: campusId } }).then((campusObj) => {
+		studentAPI
+			.getStudentsByCampusID(campusId)
+			.then((studentList) => {
+				console.log(studentList, 'This is the student list');
+				// console.log(studentObj);
+				studentList.forEach((studentObj) => {
+					studentObj.destroy();
+				});
+				campusObj.destroy();
+			})
+			.then(() => console.log('successfully removed campus and all students associated with it '))
+			.catch((err) => console.log('Couldnt remove Campus or students', err));
+	});
+};
 
 exports.addStudent = async (campusId) => {
 	campus
 		.findOne({ where: { id: campusId } })
 		.then((campusObj) => {
-			campusObj.increment('number_of_students', {by: 1}).then(() => console.log('Number of Students was Incremented'));
+			campusObj
+				.increment('number_of_students', { by: 1 })
+				.then(() => console.log('Number of Students was Incremented'));
 		})
 		.catch((err) => console.log('Err could not find campus', err));
 };
@@ -89,11 +93,12 @@ exports.popStudent = async (campusId) => {
 		.findOne({ where: { id: campusId } })
 		.then((campusObj) => {
 			if (campusObj.number_of_students > 0) {
-				campusObj.decrement('number_of_students', {by: 1}).then(() => console.log('Number of Students was Incremented'));
+				campusObj
+					.decrement('number_of_students', { by: 1 })
+					.then(() => console.log('Number of Students was Decremented'));
 			} else {
 				console.log('Err the campus table has no more students to remove');
 			}
 		})
 		.catch((err) => console.log('Err could not  find campus', err));
 };
-
