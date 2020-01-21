@@ -19,7 +19,8 @@ class contact extends Component {
             );
           }
         }
-    ReactDOM.render(<contact />, document.getElementById('root'));
+        
+    ReactDOM.render(<contact/>, document.getElementById('root'));
     
 
 
