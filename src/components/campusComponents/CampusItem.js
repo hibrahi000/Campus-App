@@ -1,31 +1,12 @@
 import React, { PureComponent } from 'react';
 import CampusBody from './CampusBody';
-
-const styles = {
-  li: {
-    display: 'flex',
-    justifyContent: 'flex-start',
-    background: 'white',
-    boxShadow: '2px 4px 10px rgba(0, 0, 0, 0.2)',
-    color: '333A40',
-    margin: '1em'
-  },
-  leftWall: color => ({
-    width: '1em',
-    backgroundColor: color
-  })
-};
+import classes from './style.module.css';
 
 export default class CampusItem extends PureComponent {
   render() {
     return (
-      <div>
-        <li
-          style={styles.li}
-          onClick={() => this.props.handleOnCampusClick(this.props.id)}
-        >
-          <div style={styles.leftWall('#333A40')} />
-
+      <div className={classes.campusList}>
+        <li onClick={() => this.props.handleOnCampusClick(this.props.id)}>
           <CampusBody
             name={this.props.name}
             description={this.props.description}

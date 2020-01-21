@@ -1,0 +1,8 @@
+.campusList {
+  display: 'flex';
+  justify-content: 'flex-start';
+  background: 'white';
+  box-shadow: '2px 4px 10px rgba(0, 0, 0, 0.2)';
+  color: '333A40';
+  margin: '1em';
+}

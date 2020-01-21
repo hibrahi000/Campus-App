@@ -1,22 +1,33 @@
-import React from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
+import React, { PureComponent } from 'react';
+import CampusBody from './CampusBody';
 
-class NavBar extends React.Component {
+const styles = {
+  li: {
+    display: 'flex',
+    justifyContent: 'flex-start',
+    background: 'white',
+    boxShadow: '2px 4px 10px rgba(0, 0, 0, 0.2)',
+    color: '333A40',
+    margin: '1em'
+  },
+  leftWall: color => ({
+    width: '1em',
+    backgroundColor: color
+  })
+};
+
+export default class CampusItem extends PureComponent {
   render() {
     return (
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand href="/">Home</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto"></Nav>
-          <Nav>
-            <Nav.Link href="/campusDetail">Campuses</Nav.Link>
-            <Nav.Link href="/students">Students</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+      <li style={styles.li}>
+        <div style={styles.leftWall('#333A40')} />
+        <CampusBody
+          name={this.props.name}
+          description={this.props.description}
+          image={this.props.image}
+          address={this.props.address}
+        />
+      </li>
     );
   }
 }
-
-export default NavBar;
