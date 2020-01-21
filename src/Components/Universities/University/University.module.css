@@ -15,13 +15,19 @@
 
 .University .Title{
     grid-column: 3/-1;
+    cursor: pointer;
 }
 
 .University .ImagePlace{
     grid-column: 1/3;
     grid-row: 1/4;
-    background-color: red;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    cursor: pointer;
+    /* background-color: red; */
 }
+
 .University p{
     grid-column: 3/-1;
 }

@@ -1,9 +1,9 @@
 import React from 'react'
 import axios from 'axios'
 
-const requestPost = () => {
+const requestPost = (props) => {
 
-    axios.post("")
+    axios.post(postRequest)
     .then(response =>{
           console.log(response.data.data);
     })

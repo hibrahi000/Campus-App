@@ -6,9 +6,9 @@ class University extends Component {
     return (
       <div className={classes.University}  id={this.props.ID}>
         <h3 className={classes.Title} onClick ={this.props.campusPageClick}>{this.props.title}</h3>
-        <div className={classes.ImagePlace} onClick ={this.props.campusPageClick}>
-          <img src={this.props.image} alt="" />
-        </div>
+         {/* className={classes.ImagePlace} onClick ={this.props.campusPageClick}> */}
+          <img className={classes.ImagePlace} src={this.props.image} onClick ={this.props.campusPageClick} alt="" />
+       
         <p>Amount of students: {this.props.studentsCount}</p>
 
         <button className={classes.Edit} onClick={this.props.edit}>Edit</button>
