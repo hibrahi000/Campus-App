@@ -5,7 +5,7 @@ class contact extends Component {
     
     render() {
         return (
-              <form>
+              <form className="contactpage">
                 <h1><strong>Contact Us:</strong></h1>
                 <p>Enter your name:</p>
                 <input type="text"/>
