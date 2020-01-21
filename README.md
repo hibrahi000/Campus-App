@@ -1,6 +1,10 @@
 <h1>Campus app</h1>
 
 //Updated
+
+![V1_Campus02](https://user-images.githubusercontent.com/34346031/72777475-c364ce80-3be3-11ea-855c-d15eacfc8bb9.gif)
+
+
 ![V1_Campus01](https://user-images.githubusercontent.com/34346031/72771517-25670900-3bcf-11ea-8e23-85263ab66f45.gif)
 
 ![V1_Campus01](https://user-images.githubusercontent.com/34346031/72759361-7d881600-3ba3-11ea-91f8-04675239579b.gif)
