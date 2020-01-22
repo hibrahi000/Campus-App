@@ -18,13 +18,15 @@ module.exports = db.define('student', {
 		allowNull: false
 	},
 	gender: {
-		type: Sequelize.STRING(50)
+		type: Sequelize.STRING(50),
+		default: 'N/A'
 	},
 	email: {
 		type: Sequelize.STRING(50)
 	},
 	date_of_birth: {
-		type: Sequelize.DATE
+		type: Sequelize.DATE,
+		allowNull: true
 	},
 
 	campus_id: {
@@ -32,7 +34,7 @@ module.exports = db.define('student', {
 		references: {
 			model: campus,
 			key: 'id'
-        }
-        // ^^ the reference attribute is to reference the table imported above as campus
+		}
+		// ^^ the reference attribute is to reference the table imported above as campus
 	}
 });

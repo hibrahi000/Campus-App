@@ -89,10 +89,11 @@ exports.getStudentsByCampusID = async (query) => {
 };
 
 exports.addStudent = async (firstName, lastName, gender, email, dob, campusId) => {
+	console.log('WithIN Function',firstName,lastName,gender)
 	const studentObj = {
-		first_name: firstName.toUpperCase(),
-		last_name: lastName.toUpperCase(),
-		gender: gender.toUpperCase(),
+		first_name: firstName.charAt(0).toUpperCase()+firstName.slice(1),
+		last_name: lastName.charAt(0).toUpperCase()+lastName.slice(1),
+		gender: gender,
 		email: email,
 		date_of_birth: dob,
 		campus_id: campusId
