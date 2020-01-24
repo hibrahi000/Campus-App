@@ -1,10 +1,8 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 2000;
 app.listen(port, () => console.log(`Listening on port ${port}`));
-
-
 
 
 const homepageRoutes = require('./routes/homepageRoutes');
@@ -20,10 +18,6 @@ app.use('/Student', studentRoutes);
 // ____Body-Parser for express 4
 app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(bodyParser.json());
-
-
-
-
 
 // *
 // !

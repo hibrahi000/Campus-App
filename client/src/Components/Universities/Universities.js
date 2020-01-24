@@ -74,21 +74,7 @@ class Universities extends Component {
 	};
 
 	addUniversityHandler = (event) => {
-		// event.preventDefault();
-		// console.log('Adding a new Uni ' + event);
-		// console.log(this.titleForm);
-		// const universities = [ ...this.state.universities ];
-		// universities.push({
-		// 	title: this.titleForm,
-		// 	studentsCount: 0,
-		// 	address: this.addressForm,
-		// 	image: this.imageSForm,
-		// 	description: this.desForm,
-		// 	id: ''
-		// });
-		// axios.post('/Campus/Add_Campus').then(() => {
-		// })
-		// this.setState({ addMyForm: false });
+		axios.post()
 	};
 
 	editUniversityHandler = (event) => {
