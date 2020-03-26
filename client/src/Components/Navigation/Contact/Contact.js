@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-import './App.css';
+import classes from "./Contact.module.css"
 
 class Contact extends Component {
     
     render() {
         return (
-              <form className="contactpage">
+          <div className={classes.Contact}>
+              <form className={classes.Conent}>
+              
                 <h1><strong>Contact Us:</strong></h1>
                 <p>Enter your name:</p>
                 <input type="text"/>
@@ -14,14 +15,16 @@ class Contact extends Component {
                 <p>Information Inquiry:</p>
                 <textarea placeholder="Enter submission"/>
 
-                <input type="submit" />
-
+              
+                <br/>
+                <input className={classes.Btn} type="submit" />
+                <br/>
+                <br/>
               </form>
+              </div>
             );
           }
         }
-        
-    ReactDOM.render(<Contact/>, document.getElementById('root'));
     
 
 

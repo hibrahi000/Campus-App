@@ -2,10 +2,10 @@ import './App.css';
 import React, {Component} from 'react';
 
 
-class campuses extends Component {
+class Campuses extends Component {
     render() {
         return null;
     }
 }
 
-export default campuses;
+export default Campuses;

@@ -1,0 +1,24 @@
+.Contact {
+  width: 100vw;
+  height: 100vh;
+  background: url(../../../Images/showcase2.jpeg) center center/cover;
+  /* margin: 2%; */
+}
+.Conent {
+  color: white;
+  text-align: center;
+  position: relative;
+  top: 40px;
+  left: -20%;
+}
+.Btn {
+  height: 3rem;
+  width: 8em;
+  color: rgb(59, 59, 59);
+  border-radius: 10px;
+  border: 0;
+  background-color: lightblue;
+  outline: none;
+  font-size: 24px;
+  font-weight: bold;
+}

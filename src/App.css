@@ -5,7 +5,9 @@ html, body {
   background: url('./images/showcase.jpeg') fixed center/cover;
 }
 .contactpage{
-  background: url('./images/showcase3.jpeg') fixed center/cover;
+  background: url('./images/showcase3.jpeg') fixed center center/cover;
+  width: 100%;
+  height: 100%;
 }
 #home {
   display: block;
